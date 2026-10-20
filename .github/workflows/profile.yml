@@ -1,0 +1,86 @@
+# Configured from the upstream examples linked in CREDITS.md.
+name: Update profile cards and snake
+on:
+  schedule:
+    - cron: "23 22 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/profile.yml"]
+permissions:
+  contents: write
+concurrency:
+  group: profile-assets
+  cancel-in-progress: false
+jobs:
+  profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - name: Statistics - light
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=ghost-yu&show_icons=true&hide_rank=true&hide_border=true&bg_color=F8F7FC&title_color=8975AF&text_color=555568&icon_color=8DA9C4&border_radius=12&card_width=420
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+      - name: Statistics - dark
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=ghost-yu&show_icons=true&hide_rank=true&hide_border=true&bg_color=1A1B27&title_color=B4A5E8&text_color=A9B1D6&icon_color=8DA9C4&border_radius=12&card_width=420
+          path: profile/stats-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+      - name: Languages - light
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=ghost-yu&layout=compact&langs_count=6&hide_border=true&bg_color=F8F7FC&title_color=8975AF&text_color=555568&border_radius=12&card_width=340
+          path: profile/languages.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+      - name: Languages - dark
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=ghost-yu&layout=compact&langs_count=6&hide_border=true&bg_color=1A1B27&title_color=B4A5E8&text_color=A9B1D6&border_radius=12&card_width=340
+          path: profile/languages-dark.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+      - name: Contribution graph - light
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ghost-yu
+          UTC_OFFSET: 8
+          THEME: github
+          AUTO_PUSH: false
+      - name: Contribution graph - dark
+        uses: vn7n24fzkq/github-profile-summary-cards@release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ghost-yu
+          UTC_OFFSET: 8
+          THEME: tokyonight
+          AUTO_PUSH: false
+      - name: Contribution snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ghost-yu
+          outputs: |
+            profile/snake.svg?color_snake=%239d8bc4&color_dots=%23eeeaf5,%23d8ccec,%23b4a5e8,%239d8bc4,%237865a3
+            profile/snake-dark.svg?palette=github-dark&color_snake=%23e8b4cb&color_dots=%23232638,%23413b5b,%23655887,%239d8bc4,%23b4a5e8
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish generated artwork
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: refresh profile cards and snake"
+          file_pattern: profile/*.svg profile-summary-card-output

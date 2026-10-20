@@ -52,23 +52,13 @@ jobs:
           path: profile/languages-dark.svg
           token: ${{ secrets.GITHUB_TOKEN }}
           fail_on_error: true
-      - name: Contribution graph - light
+      - name: Contribution graphs - light and dark themes
         uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ghost-yu
           UTC_OFFSET: 8
-          THEME: github
-          AUTO_PUSH: false
-      - name: Contribution graph - dark
-        uses: vn7n24fzkq/github-profile-summary-cards@release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          USERNAME: ghost-yu
-          UTC_OFFSET: 8
-          THEME: tokyonight
           AUTO_PUSH: false
       - name: Contribution snake
         uses: Platane/snk/svg-only@v3

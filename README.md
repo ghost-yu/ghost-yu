@@ -5,7 +5,7 @@
 <a href="https://github.com/DenverCoder1/readme-typing-svg"><img width="100%" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&duration=3800&pause=2000&color=9D8BC4&center=true&vCenter=true&multiline=true&groups=1,1,2,3&width=800&height=108&lines=For%20others%2C%20in%20spite%20of%20myself%2C%20from%20myself.;The%20future%20must%20be%20cracked%20open%20once%20again.;The%20contemporary%20is%20he%20who%20firmly%20holds%20his%20gaze%20on%20his%20own%20time;so%20as%20to%20perceive%20not%20its%20light%2C%20but%20rather%20its%20darkness.;Today%20our%20teacher%20asked%20us%20to%20write%20an%20essay%20about%20accepting;our%20own%20mediocrity.%20I%20thought%20about%20it%20for%20a%20while%2C%20then%20asked;my%20classmate%2C%20%E2%80%98How%20do%20you%20spell%20mediocrity%3F%E2%80%99" alt="For others, in spite of myself, from myself. / The future must be cracked open once again. / The contemporary is he who firmly holds his gaze on his own time so as to perceive not its light, but rather its darkness. / Today our teacher asked us to write an essay about accepting our own mediocrity. I thought about it for a while, then asked my classmate, ‘How do you spell mediocrity?’" /></a>
 
 <p>
-<img src="https://komarev.com/ghpvc/?username=ghost-yu&label=PROFILE+VIEWS&color=9d8bc4&style=flat-square" alt="Profile views" />
+<img src="https://komarev.com/ghpvc/?username=ghost-yu&label=Profile%20views&color=9d8bc4&style=flat" alt="Profile views" />
 <a href="https://github.com/ghost-yu?tab=followers"><img src="https://img.shields.io/github/followers/ghost-yu?label=FOLLOWERS&style=flat-square&color=8da9c4&labelColor=555568" alt="GitHub followers" /></a>
 <img src="https://img.shields.io/badge/CS_%2F_AI-undergraduate-b4a5e8?style=flat-square&labelColor=555568" alt="CS / AI undergraduate" />
 </p>
@@ -67,7 +67,11 @@
 
 </div>
 
-<!-- METRICS: the image is added after the first successful Metrics run. -->
+<details>
+<summary><b>更多 Metrics · 语言分布与立体贡献日历</b></summary>
+<br />
+<p align="center"><img width="100%" src="./github-metrics.svg" alt="GitHub Metrics, language distribution and isometric contribution calendar" /></p>
+</details>
 
 ### 04 / A little snake
 
